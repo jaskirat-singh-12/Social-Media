@@ -1,85 +1,3 @@
-// import { useState } from "react";
-
-// export default function CreatePost() {
-//   const [image, setImage] = useState(null);
-//   const [caption, setCaption] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   const handleUpload = async (e) => {
-//     e.preventDefault();
-//     if (!image) return alert("Please select an image");
-//     setLoading(true);
-
-//     const formData = new FormData();
-//     formData.append("image", image);
-
-//     const res = await fetch("http://localhost:3000/api/post", {
-//       method: "POST",
-//       credentials: "include",
-//       body: formData,
-//     });
-//     const data = await res.json();
-//     setLoading(false);
-//     if (res.ok) {
-//       setCaption(data.post.caption);
-//     } else {
-//       alert(data.message);
-//     }
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white px-4">
-//       <h2 className="backdrop-blur-lg bg-white/10 border border-white/20 p-10 rounded-3xl shadow-2xl w-full max-w-md text-center animate-fadeIn">Create Post</h2>
-//       <form onSubmit={handleUpload} className="flex flex-col gap-4">
-//         <input
-//           type="file"
-//           accept="image/*"
-//           onChange={(e) => setImage(e.target.files[0])}
-//           className="flex flex-col items-center justify-center border-2 border-dashed border-gray-500 rounded-2xl p-8 cursor-pointer hover:border-pink-500 hover:bg-pink-500/10 transition-all duration-300 ease-in-out group"
-//         />
-
-//         <label className="flex flex-col items-center justify-center border-2 border-dashed border-gray-500 rounded-2xl p-8 cursor-pointer hover:border-pink-500 hover:bg-pink-500/10 transition-all duration-300 ease-in-out group">
-//       <svg xmlns="http://www.w3.org/2000/svg" className="w-14 h-14 text-pink-500 mb-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M4 12l8-8 8 8M12 4v12" />
-//       </svg>
-//       <span className="text-gray-300 text-lg">
-//         Drag & Drop or <span className="text-pink-500 font-bold">Browse</span>
-//       </span>
-//       <input type="file" className="hidden" />
-//     </label>
-
-//         <button
-//           className="mt-8 w-full relative bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white py-3 rounded-full font-bold shadow-lg hover:scale-105 hover:shadow-pink-500/50 transition-all duration-300 overflow-hidden"
-//         >
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             fill="currentColor"
-//             viewBox="0 0 16 16"
-//             className="w-5 h-5 relative z-10"
-//           >
-//             <path d="M.5 9.9a.5.5 0 0 1 .5.5V13h14V10.4a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-2.6a.5.5 0 0 1 .5-.5z"
-//             />
-//             <path
-//               d="M7.646 1.146a.5.5 0 0 1 .708 0l3.5 3.5a.5.5 0 0 1-.708.708L8.5 
-//     2.707V10.5a.5.5 0 0 1-1 0V2.707L4.854 5.354a.5.5 0 1 1-.708-.708l3.5-3.5z"
-//             />
-//           </svg>
-//           <span className="relative z-10"> Upload</span>
-//       <span className="absolute inset-0 bg-white/20 blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-
-//         </button>
-//       </form>
-//       {caption && (
-//         <div className="mt-4 p-4 bg-gray-700 rounded">
-//           <p className="font-medium">AI Caption:</p>
-//           <p>{caption}</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-
 
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -97,7 +15,7 @@ export default function CreatePost() {
     const formData = new FormData();
     formData.append("image", image);
 
-    const res = await fetch("http://localhost:3000/api/post", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/post`, {
       method: "POST",
       credentials: "include",
       body: formData,
