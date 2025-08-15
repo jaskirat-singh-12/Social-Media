@@ -30,7 +30,7 @@ const Loader = () => {
       <style jsx>{`
         .animate-gradient {
           background-size: 300% 300%;
-          animation: gradientMove 5s ease infinite;
+          animation: gradientMove 4s ease infinite;
         }
         @keyframes gradientMove {
           0% {
