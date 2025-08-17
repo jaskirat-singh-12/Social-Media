@@ -4,6 +4,7 @@ import { FaTrash, FaHeart, FaRegComment } from "react-icons/fa";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const [likedPosts, setLikedPosts] = useState(new Set());
 
   const handleDelete = async (postId) => {
     if (!confirm("Are you sure you want to delete this post?")) return;
