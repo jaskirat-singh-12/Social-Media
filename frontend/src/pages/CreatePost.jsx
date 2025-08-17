@@ -15,7 +15,7 @@ export default function CreatePost() {
     const formData = new FormData();
     formData.append("image", image);
 
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/post`, {
+    const res = await fetch(`https://social-media-3wo8.onrender.com/api/post`, {
       method: "POST",
       credentials: "include",
       body: formData,

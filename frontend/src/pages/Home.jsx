@@ -8,7 +8,7 @@ export default function Home() {
   const handleDelete = async (postId) => {
     if (!confirm("Are you sure you want to delete this post?")) return;
 
-    await fetch(`${import.meta.env.VITE_API_URL}/api/post/${postId}`, {
+    await fetch(`https://social-media-3wo8.onrender.com/api/post/${postId}`, {
       method: "DELETE",
       credentials: "include",
     });
@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/post`, { credentials: "include" })
+    fetch(`https://social-media-3wo8.onrender.com/api/post`, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setPosts(data.posts || []));
   }, []);

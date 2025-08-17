@@ -12,7 +12,7 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
+    const res = await fetch(`https://social-media-3wo8.onrender.com/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

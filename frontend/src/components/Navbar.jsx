@@ -9,7 +9,7 @@ export default function Navbar() {
   const [token, setToken] = useState(false);
 
   const logout = async () => {
-    await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
+    await fetch(`https://social-media-3wo8.onrender.com/auth/logout`, {
       method: "GET", 
       credentials: "include",
     });
@@ -19,7 +19,7 @@ export default function Navbar() {
 
 
   useEffect(() => {
-  fetch(`${import.meta.env.VITE_API_URL}/auth/user`, {
+  fetch(`https://social-media-3wo8.onrender.com/auth/user`, {
     credentials: "include",
   })
     .then(res => res.json())
