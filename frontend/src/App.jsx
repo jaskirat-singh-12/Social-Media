@@ -10,33 +10,29 @@ import Loader from "./components/Loader";
 export default function App() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-     const timer = setTimeout(() => setLoading(false), 3000); 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-    {loading ? (
-
-      
-    <Loader />
-    ) :(
-
-    <BrowserRouter>
-      <div className="bg-gray-900 text-white min-h-screen">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/create" element={<CreatePost />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-    )
-    
-    }
+      {loading ? (
+        <Loader />
+      ) : (
+        <BrowserRouter>
+          <div >
+            
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/create" element={<CreatePost />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      )}
     </>
   );
 }

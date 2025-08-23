@@ -12,10 +12,10 @@ export default function PostCard({ post }) {
 
       {/* Content */}
       <div className="p-3 sm:p-4">
-        <p className="text-xs sm:text-sm text-gray-400 truncate">
+        <p className="text-xs sm:text-sm text-gray-300 truncate">
           @{post.user?.username || "unknown"}
         </p>
-        <p className="mt-1 sm:mt-2 text-sm sm:text-base break-words">
+        <p className="mt-1 sm:mt-2 text-sm sm:text-base break-words text-white">
           {post.caption}
         </p>
       </div>
